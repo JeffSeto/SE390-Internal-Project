@@ -1,15 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import c from "classnames"
+import styles from './App.css'
+import Header from "./components/Header"
+import Display from "./components/Display";
 
-class App extends Component {
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        IT WORKSSS WOOOO
+      <div className="container">
+        <Header name={"Jeffrey"}/>
+
+        <Display/>
       </div>
-    );
+    )
   }
 }
-
-export default App;
