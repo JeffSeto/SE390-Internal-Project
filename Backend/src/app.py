@@ -112,4 +112,6 @@ api.add_resource(UserCourseTerm, "/add")
 api.add_resource(Course, "/course/<string:courseid>")
 api.add_resource(Term, "/term/<int:termid>")
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
+
