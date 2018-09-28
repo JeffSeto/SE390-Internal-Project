@@ -1,6 +1,31 @@
-version: '3'
+version: '2.3'
 services:
+  db:
+    image: postgres:9.6
+    restart: always
+    ports:
+     - "5432:5432"
+    environment:
+        - POSTGRES_USER=se390
+        - POSTGRES_PASSWORD=pass
+        - POSTGRES_DB=course_planner
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U se390 -d course_planner"]
+      interval: 3s
+      timeout: 30s
+      retries: 3
   web:
     build: .
+    command: python3 views.py
     ports:
-     - "5000:5000"
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    links: 
+      - db
+
+volumes:
+  dbinit:
