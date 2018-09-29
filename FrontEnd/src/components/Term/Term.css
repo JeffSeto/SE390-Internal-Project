@@ -32,5 +32,10 @@
 
 
 .term-mandatory-course-container {
+    margin-top: 15px;
+}
 
+.term-dropdown {
+    background-color: #f3f3f3;
+    margin-top: 15px;
 }
