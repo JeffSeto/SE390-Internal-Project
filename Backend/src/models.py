@@ -62,10 +62,12 @@ class Requirement(db.Model):
     program_id = db.Column(db.Integer, db.ForeignKey('programs.id'))
     term = db.Column(db.Text, nullable=True)
     courses = db.Column(db.Text, nullable=False) # comma delimited list of course ids
+    electives = db.Column(db.Integer, nullable=False) # number of electives allowed that term
 
-    def __init__(self, term, courses):
+    def __init__(self, term, courses, electives):
         self.term = term
         self.courses = courses
+        self.electives = electives
 
 ###############################################################
 
