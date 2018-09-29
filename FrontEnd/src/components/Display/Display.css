@@ -1,0 +1,11 @@
+.display-container {
+    overflow-x: scroll;
+    display: grid;
+    padding: 40px;
+
+    grid-template-columns: 22% 22% 22% 22% 22% 22% 22% 22%;
+    grid-column-gap: 4%;
+
+    height: calc(100% - 80px);
+    width: 100%;
+}

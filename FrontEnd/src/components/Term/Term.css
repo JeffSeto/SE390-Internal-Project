@@ -1,0 +1,28 @@
+.term-container {
+    padding: 10px;
+    border: 1px solid #DFE3EA;
+    background-color: #f3f3f3;
+    width: 100%;
+
+}
+
+.term-stats-container {
+    border-top: 1px solid #DFE3EA;
+}
+
+.term-stats-text {
+    margin: 5px 0;
+}
+
+.term-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.term-mandatory-course {
+
+}
+
+.term-mandatory-course-container {
+
+}
