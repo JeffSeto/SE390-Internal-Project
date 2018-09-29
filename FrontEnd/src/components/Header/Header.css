@@ -3,8 +3,8 @@
     height: 80px;
     display: flex;
     align-items: center;
-    background-color: #657b9e;
-    box-shadow: 0 1px 2px 0 #C4C4C4;
+    background-color: #538fef;
+    border-bottom: 2px solid #75777c;
     padding: 10px;
 }
 

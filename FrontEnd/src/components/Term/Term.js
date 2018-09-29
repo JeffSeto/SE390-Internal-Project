@@ -31,7 +31,7 @@ export default class Term extends React.Component {
     const usefulness = 100
 
     return (
-      <div className={c("term-container")}>
+      <span className={c("term-container")}>
         <div className={c("term-title")}>
           {`Term: ${term}`}
         </div>
@@ -44,7 +44,7 @@ export default class Term extends React.Component {
           <p className={c("term-stats-text")}><b>Easiness: </b> {easiness}%</p>
           <p className={c("term-stats-text")}><b>Usefulness: </b> {usefulness}%</p>
         </div>
-      </div>
+      </span>
     )
   }
 }

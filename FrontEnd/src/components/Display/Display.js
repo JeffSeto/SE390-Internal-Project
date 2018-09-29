@@ -5,12 +5,25 @@ import Term from "../Term/Term";
 
 export default class Display extends React.Component {
 
-  render() {
+  constructor(props) {
+    super(props)
+    this.state = {
+      mandatoryCourses: null
+    }
+  }
 
-    const mandatoryCourses = [
-      ["SE 101", "MATH 117"],
-      [""]
-    ]
+  componentWillMount() {
+    fetch("http://localhost:5000/courses", {
+      method: "GET",
+      mode: "no-cors"
+    }).then((courses) => {
+      console.log(courses)
+    })
+  }
+
+  render() {
+    const {mandatoryCourses} = this.state
+    if(!mandatoryCourses) return null
 
     return (
       <div className={c("display-container")}>

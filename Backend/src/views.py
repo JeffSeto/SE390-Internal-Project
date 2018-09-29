@@ -1,4 +1,5 @@
 from flask import Flask, request, abort
+from flask_cors import CORS
 from flask_restful import Api
 
 from models import User, db, connect_to_db
@@ -6,6 +7,7 @@ from user_resource import UserView
 from course_resource import CourseView
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 api = Api(app)
 
