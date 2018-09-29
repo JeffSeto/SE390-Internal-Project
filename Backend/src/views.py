@@ -4,15 +4,15 @@ from flask_restful import Api
 from models import User, db, connect_to_db
 from user_resource import UserView
 from course_resource import CourseView
+from requirements_resource import RequirementsView
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 api = Api(app)
 
-
-
 api.add_resource(UserView, "/users", "/users/<string:user_id>")
 api.add_resource(CourseView, "/courses")
+api.add_resource(RequirementsView, "/requirements")
 
 if __name__ == '__main__':
     connect_to_db(app)
@@ -91,7 +91,7 @@ if __name__ == '__main__':
 # #         for group in prereq_groups:
 # #             if (prereqid == group["prereqid"]):
 # #                 return group
-        
+
 # # api.add_resource(User, "/users/<string:userid>")
 # # api.add_resource(UserCourseTerm, "/add")
 # # api.add_resource(Course, "/courses/<string:courseid>")
@@ -100,4 +100,3 @@ if __name__ == '__main__':
 # if __name__ == "__main__":
 #     connect_to_db(app)
 #     app.run(host="0.0.0.0", debug=True)
-
