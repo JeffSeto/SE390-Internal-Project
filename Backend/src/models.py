@@ -26,16 +26,18 @@ class User(db.Model):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 class Course(db.Model):
-    
+
     __tablename__ = "courses"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.Text, nullable=False)
+    faculty = db.Column(db.Text, nullable=False)
     course_code = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text, nullable=True)
 
-    def __init__(self, name, course_code, description):
+    def __init__(self, name, faculty, course_code, description):
         self.name = name
+        self.faculty = faculty
         self.course_code = course_code
         self.description = description
 
@@ -48,7 +50,7 @@ class Program(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.Text, nullable=False)
-    
+
     def  __init__(self, name):
         self.name = name
 
@@ -58,12 +60,10 @@ class Requirement(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     program_id = db.Column(db.Integer, db.ForeignKey('programs.id'))
-    name = db.Column(db.Text, nullable=True)
     term = db.Column(db.Text, nullable=True)
     courses = db.Column(db.Text, nullable=False) # comma delimited list of course ids
 
-    def __init__(self, name, term, courses):
-        self.name = name
+    def __init__(self, term, courses):
         self.term = term
         self.courses = courses
 
