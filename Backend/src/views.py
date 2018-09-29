@@ -6,6 +6,7 @@ from models import User, db, connect_to_db
 from user_resource import UserView
 from course_resource import CourseView
 from requirements_resource import RequirementsView
+from validation_resource import ValidationView
 
 app = Flask(__name__)
 CORS(app)
@@ -15,6 +16,7 @@ api = Api(app)
 api.add_resource(UserView, "/users", "/users/<string:user_id>")
 api.add_resource(CourseView, "/courses")
 api.add_resource(RequirementsView, "/requirements")
+api.add_resource(ValidationView, "/validate")
 
 if __name__ == '__main__':
     connect_to_db(app)

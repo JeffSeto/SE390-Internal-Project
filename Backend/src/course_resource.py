@@ -7,6 +7,7 @@ class CourseView(Resource):
     courses = {
         'value': fields.List(fields.Nested({
             'name': fields.String,
+            'faculty': fields.String,
             'course_code': fields.String,
             'description': fields.String
         }))

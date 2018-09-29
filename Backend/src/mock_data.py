@@ -8,8 +8,12 @@ courses = [
 ]
 
 requirements = [
-    Requirement("1A", "SE 101,MATH 115,MATH 117,MATH 135,CS 137,ECE 105"),
-    Requirement("1B", "SE 102,MATH 119,CS 138,ECE 106,ECE 124,ECE 140"),
-    Requirement("2A", "SE 201,SE 212,CS 241,ECE 222,STAT 206,CHE 102"),
-    Requirement("2B", "SE 202,CS 240,CS 247,MSCI 261,MATH 213,MATH 239")
+    Requirement("1A", "SE 101,MATH 115,MATH 117,MATH 135,CS 137,ECE 105", 0),
+    Requirement("1B", "SE 102,MATH 119,CS 138,ECE 106,ECE 124,ECE 140", 0),
+    Requirement("2A", "SE 201,SE 212,CS 241,ECE 222,STAT 206,CHE 102", 1),
+    Requirement("2B", "SE 202,CS 240,CS 247,MSCI 261,MATH 213,MATH 239", 1),
+    Requirement("3A", "SE 301,CS 341,CS 349,SE 350,SE 465", 1),
+    Requirement("3B", "SE 302,CS 343,CS 348,SE 380,SE 464", 1),
+    Requirement("4A", "SE 401,ECE 358,SE 463,SE 490", 2),
+    Requirement("4B", "SE 402,SE 491", 5)
 ]

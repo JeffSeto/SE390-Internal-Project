@@ -7,7 +7,8 @@ class RequirementsView(Resource):
     requirements = {
         'value': fields.List(fields.Nested({
             'term': fields.String,
-            'courses': fields.String
+            'courses': fields.String,
+            'electives': fields.Integer
         }))
     }
 
