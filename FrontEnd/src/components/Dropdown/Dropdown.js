@@ -24,6 +24,9 @@ export default class Dropdown extends React.Component {
     this.setState({showOptions: !showOptions})
   }
 
+  onOptionClicked(e, option) {
+    this.props.onChange(option)
+  }
 
   render() {
     const {className, placeholder, disabled, options, value, onChange} = this.props;
@@ -33,11 +36,11 @@ export default class Dropdown extends React.Component {
       <div className={c("dropdown-option-panel")}>
         {
 
-          _.compact(_.map(options, (option) => {
+          _.compact(_.map(options, (option,i) => {
             console.log("value", value)
             if(value != null && !option.includes(value)) return null
             return (
-              <div className={c("dropdown-option")}>
+              <div key={i} className={c("dropdown-option")} onMouseDown={(e) => this.onOptionClicked(e, option)}>
                 {option}
               </div>
             )

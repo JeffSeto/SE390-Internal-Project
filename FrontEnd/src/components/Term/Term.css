@@ -30,8 +30,11 @@
 
 }
 
-
 .term-mandatory-course-container {
+    margin-top: 15px;
+}
+
+.term-electives-container {
     margin-top: 15px;
 }
 

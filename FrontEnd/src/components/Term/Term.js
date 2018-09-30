@@ -16,7 +16,7 @@ export default class Term extends React.Component {
 
 
   render() {
-    const {term, mandatoryCourses, numElectives, courses} = this.props
+    const {term, mandatoryCourses, numElectives, courses, onChange} = this.props
     const {electives} = this.state
 
     const mandatoryCourseDisplay = (
@@ -39,7 +39,6 @@ export default class Term extends React.Component {
       if(!electives) {
         this.setState({electives: Array(numElectives).fill("")})
       }
-      console.log("ON CHANGE", electives)
       const courseStrings = _.map(courses, (course) => {
         return `${course.faculty} ${course.course_code}, ${course.name}`
       })
@@ -51,6 +50,7 @@ export default class Term extends React.Component {
                     value={electives && electives[i] ? electives[i] : null}
                     onChange={(v) => {
                       electives[i] = v
+                      onChange(electives)
                       this.setState({electives: electives})
                     }}
           />

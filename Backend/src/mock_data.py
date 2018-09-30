@@ -2,13 +2,13 @@ from models import Course, Requirement
 
 courses = [
     Course("Operating Systems", "CS", "350", "A course on the internals of the operating system"),
-    Course("Concurrency", "CS",  "343", "A course on exceptions and advanced control flow"),
-    Course("User Interfaces", "CS", "349", "Students will build their own user interfaces"),
-    Course("Algorithms", "CS", "341", "A walkthrough of common computer science algorithms"),
     Course("Astronomy", "SCI", "238", "A course in astronomy intended for Math, Eng and Sci students."),
     Course("Environmental Geology", "SCI", "250", "An introduction to geological concepts."),
     Course("Compilers", "CS", "444", "Learn about phases of compilation."),
     Course("Real-time", "CS", "452", "Tools and techniques of real-time programming."),
+    Course("Introduction to Machine Learning", "CS", "480", ""),
+    Course("Computational Vision", "CS", "484", ""),
+    Course("Foundations of ML", "CS", "485", "An introduction to the concepts of Machine Learning"),
     Course("Intro to AI", "CS", "486", "An introduction to the concepts of Artificial Intelligence."),
     Course("Cryptography", "ECE", "409", "Introduction to cryptology and computer security.")
 ]
